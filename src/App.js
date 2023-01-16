@@ -1,10 +1,11 @@
 import { createGlobalStyle,ThemeProvider } from "styled-components";
-import Ask from "./component/Ask";
-import First from "./component/First";
-import Fourth from "./component/Fourth";
-import Second from "./component/Second";
-import Third from "./component/Third";
+import MyInformation from "./main/MyInformation";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Theme } from "./theme";
+import Account from "./secondComponent/Account";
+import DetailPoint from "./secondComponent/DetailPoint";
+import UsePoint from "./secondComponent/UsePoint";
+
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
   html, body, div, span, applet, object, iframe,
@@ -61,6 +62,9 @@ body{
   font-weight: 300;
   font-family: 'Source Sans Pro',sans-serif;
   line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 a{
   text-decoration: none;
@@ -71,11 +75,24 @@ function App() {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyle/>
-      <First/>
-      <Second/>
-      <Third/>
-      <Fourth/>
-      <Ask/>
+      
+      <Router>
+      <Switch>
+        <Route path="/account">
+          <Account/>
+        </Route>
+        <Route path="/detailPoint">
+          <DetailPoint/>
+        </Route>
+        <Route path="/usePoint">
+          <UsePoint/>
+        </Route>
+        <Route path="/">
+          <MyInformation/>
+        </Route>
+      </Switch>
+      </Router>
+
     </ThemeProvider>
   );
 }

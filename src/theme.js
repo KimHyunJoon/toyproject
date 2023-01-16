@@ -1,6 +1,6 @@
 import {} from "styled-components"
 
 export const Theme ={
-    mainColor:"#ffb100",
-    headerColor:"#fbc252"
+    mainColor:"#fbc705",
+    headerColor:"#fcc00b"
 }
