@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Ask from "../component/Ask";
 import PointInfo from "../component/PointInfo";
 import MyInfo from "../component/MyInfo";
 
@@ -53,7 +52,6 @@ function MyInformation() {
             <Header><h2>내정보</h2></Header>
             <PointInfo/>
             <MyInfo/>
-            <Ask/>
             <Footer>
                 <Ul>
                     <li><img src={`${process.env.PUBLIC_URL}/assets/images/home.png`}/>홈</li>

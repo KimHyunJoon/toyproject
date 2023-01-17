@@ -5,6 +5,14 @@ import { Theme } from "./theme";
 import Account from "./secondComponent/Account";
 import DetailPoint from "./secondComponent/DetailPoint";
 import UsePoint from "./secondComponent/UsePoint";
+import Announce from "./secondComponent/Announce";
+import Donate from "./secondComponent/Donate";
+import Event from "./secondComponent/Event";
+import Invite from "./secondComponent/Invite";
+import Notice from "./secondComponent/Notice";
+import Question from "./secondComponent/Question";
+import Term from "./secondComponent/Term";
+import Version from "./secondComponent/Version";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
@@ -80,6 +88,30 @@ function App() {
       <Switch>
         <Route path="/account">
           <Account/>
+        </Route>
+        <Route path="/announce">
+          <Announce/>
+        </Route>
+        <Route path="/donate">
+          <Donate/>
+        </Route>
+        <Route path="/event">
+          <Event/>
+        </Route>
+        <Route path="/invite">
+          <Invite/>
+        </Route>
+        <Route path="/notice">
+          <Notice/>
+        </Route>
+        <Route path="/question">
+          <Question/>
+        </Route>
+        <Route path="/term">
+          <Term/>
+        </Route>
+        <Route path="/Version">
+          <Version/>
         </Route>
         <Route path="/detailPoint">
           <DetailPoint/>

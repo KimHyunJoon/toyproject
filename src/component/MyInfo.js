@@ -1,7 +1,9 @@
+import { Link,useHistory,useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
-    margin: 15px 0px;
+    margin-top: 15px;
     
 `;
 
@@ -16,6 +18,7 @@ align-items: center;
 padding: 0 10px;
 border-top :0.1px solid #f0f0f0;
 height: 50px;
+
 div{
     display: flex;
     justify-content: center;
@@ -30,6 +33,28 @@ div{
             margin-right: 10px;
         }
     }
+    a{
+        cursor: pointer;
+    }
+}
+`
+const AskWrapper = styled.div`
+background-color: white;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+const Question = styled.div`
+width: 90%;
+height: 50px;
+border-radius: 30px;
+border: 1px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
+h2{
+    font-weight: bolder;
 }
 `
 
@@ -43,7 +68,7 @@ function MyInfo(){
                     <p>계정관리</p>
                 </div>
                 <div>
-                    <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                    <Link to="/Account"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
                 </div>
             </Box>
             <Box>
@@ -52,7 +77,7 @@ function MyInfo(){
                     <p>친구초대</p>
                 </div>
                 <div>
-                    <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                    <Link to="/Invite"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
                 </div>
             </Box>
             <Box>
@@ -61,7 +86,7 @@ function MyInfo(){
                     <p>기부내역</p>
                 </div>
                 <div>
-                    <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                    <Link to="/Donate"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
                 </div>
             </Box>
             <Box>
@@ -70,7 +95,7 @@ function MyInfo(){
                     <p>알림설정</p>
                 </div>
                 <div>
-                    <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                    <Link to="/Announce"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
                 </div>
             </Box>
         </BoxWrapper>
@@ -81,7 +106,7 @@ function MyInfo(){
                 <p>버전정보</p>
             </div>
             <div>
-                <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                <Link to ="/Version"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
             </div>
         </Box>
         <Box>
@@ -90,7 +115,7 @@ function MyInfo(){
                 <p>공지사항</p>
             </div>
             <div>
-                <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                <Link to ="/Notice"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
             </div>
         </Box>
         <Box>
@@ -99,7 +124,7 @@ function MyInfo(){
                 <p>이벤트</p>
             </div>
             <div>
-                <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                <Link to="/Event"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
             </div>
         </Box>
         <Box>
@@ -108,7 +133,7 @@ function MyInfo(){
                 <p>이용약관</p>
             </div>
             <div>
-                <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                <Link to="/Term"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
             </div>
         </Box>
         </BoxWrapper>
@@ -119,7 +144,7 @@ function MyInfo(){
                     <p>자주 묻는 질문</p>
                 </div>
                 <div>
-                    <a><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></a>
+                    <Link to="/Question"><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></Link>
                 </div>
             </Box>
             <Box>
@@ -132,8 +157,13 @@ function MyInfo(){
                 </div>
             </Box>
         </BoxWrapper>
+        <AskWrapper>
+            <Question><h2>문의하기</h2></Question>
+        </AskWrapper>
+    </Wrapper>
+
     
-    </Wrapper>)
+    )
 }
 
 export default MyInfo;
