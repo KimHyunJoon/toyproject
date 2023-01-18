@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion, AnimatePresence, useViewportScroll} from "framer-motion";
+import HeaderBox from "./Header";
 
 const Wrapper = styled.div`
 background: #f0f0f0;
@@ -9,26 +10,7 @@ width: 360px;
 
 `;
 
-const Header = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-background-color: ${(props) => props.theme.headerColor};
-height: 50px;
-font-weight: bolder;
-font-size: 19px;
-position: relative;
 
-.back{
-    position: absolute;
-    left:20px;
-    cursor: pointer;
-    img{
-        width: 10px;
-        
-    }
-}
-`
 const AnnounceBoxWrapper =styled.div`
 background-color: white;
 padding: 15px;
@@ -147,10 +129,7 @@ function Announce(){
     const { scrollY } = useViewportScroll();
     return (
         <Wrapper>
-            <Header>
-                <h2>알림설정</h2>
-            <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
-            </Header>
+            <HeaderBox title={"알림사항"}/>
             <AnnounceBoxWrapper>
                 <ButtonBox>
                     <div>
@@ -185,7 +164,7 @@ function Announce(){
                             <h3>오늘뭐샀니에서 보내는</h3>
                             <h3>광고/이벤트/공지사항 수신여부가</h3>
                             <h3>"동의"처리 되었습니다.</h3>
-                            <p>광고성정보 수신동의 설정 : 내 정보 > 알림설정</p>
+                            <p>광고성정보 수신동의 설정 : 내 정보  알림설정</p>
                             <button>확인</button>
                         </Modal>
                     </>) : null}

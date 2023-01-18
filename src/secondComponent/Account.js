@@ -1,32 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import HeaderBox from "./Header";
 
 const Wrapper = styled.div`
 background: #f0f0f0;
 width: 360px;
 
 `;
-const Header = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-background-color: ${(props) => props.theme.headerColor};
-height: 50px;
-font-weight: bolder;
-font-size: 19px;
-position: relative;
-
-.back{
-    position: absolute;
-    left:20px;
-    cursor: pointer;
-    img{
-        width: 10px;
-        
-    }
-}
-`
 const AccountWrapper = styled.div`
 background-color: white;
 margin-bottom: 10px;
@@ -186,10 +167,7 @@ function PersonalUse(){
 function Account(){
     return (
         <Wrapper>
-            <Header>
-                <h2>계정관리</h2>
-                <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
-            </Header>
+            <HeaderBox title={"계정관리"}/>
             <EmailAccount/>
             <MyInform/>
             <PersonalUse/>

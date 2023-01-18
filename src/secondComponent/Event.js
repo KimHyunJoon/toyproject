@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import HeaderBox from "./Header";
 
 const Wrapper = styled.div`
 background: #f0f0f0;
@@ -7,26 +8,6 @@ width: 360px;
 
 `;
 
-const Header = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-background-color: ${(props) => props.theme.headerColor};
-height: 50px;
-font-weight: bolder;
-font-size: 19px;
-position: relative;
-
-.back{
-    position: absolute;
-    left:20px;
-    cursor: pointer;
-    img{
-        width: 10px;
-        
-    }
-}
-`
 
 const EventWrapper = styled.div`
 background-color: white;
@@ -87,10 +68,7 @@ function EventBox ({situation,title,date}) {
 function Event(){
     return (
     <Wrapper>
-        <Header>
-            <h2>이벤트</h2>
-            <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
-        </Header>
+        <HeaderBox title={"이벤트"}/>
         <EventBox situation={"진행중"} title={"유동 쫄깃 새꼬막살 구매이벤트"} date={"2023-01-09"} />
         <EventBox situation={"마감"} title={"Test 입니다."} date={"2023-01-09"} />
     </Wrapper>)

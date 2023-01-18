@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import HeaderBox from "./Header";
 
 const Wrapper = styled.div`
 background: #f0f0f0;
@@ -7,26 +8,7 @@ width: 360px;
 height: 600px;
 
 `;
-const Header = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-background-color: ${(props) => props.theme.headerColor};
-height: 50px;
-font-weight: bolder;
-font-size: 19px;
-position: relative;
 
-.back{
-    position: absolute;
-    left:20px;
-    cursor: pointer;
-    img{
-        width: 10px;
-        
-    }
-}
-`
 const VersionWrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -56,10 +38,7 @@ function Version(){
     return(
         
         <Wrapper>
-            <Header>
-                <h2>버전 정보</h2>
-                <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
-            </Header>
+            <HeaderBox title={"버전정보"}/>
             <VersionWrapper>
                 <img src={`${process.env.PUBLIC_URL}/assets/images/version_cow.png`}/>
                 <h1>현재 버전 6.1.0</h1>

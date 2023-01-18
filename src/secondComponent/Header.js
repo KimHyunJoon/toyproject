@@ -22,12 +22,13 @@ position: relative;
 }
 `
 
-function HeaderBox() {
-    const AccountMatch = useRouteMatch("/account")
+function HeaderBox({title}) {
     return(
         <Header>
-            <h2>친구초대</h2>
+            <h2>{title}</h2>
             <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
         </Header>
     )
 }
+
+export default HeaderBox;
