@@ -1,11 +1,6 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link,useRouteMatch } from "react-router-dom"
+import styled from "styled-components"
 
-const Wrapper = styled.div`
-background: #f0f0f0;
-width: 360px;
-
-`;
 const Header = styled.div`
 display:flex;
 justify-content: center;
@@ -27,15 +22,12 @@ position: relative;
 }
 `
 
-function Question(){
-    return (
-        <Wrapper>
-            <Header>
-                <h2>자주묻는질문</h2>
+function HeaderBox() {
+    const AccountMatch = useRouteMatch("/account")
+    return(
+        <Header>
+            <h2>친구초대</h2>
             <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
-            </Header>
-        </Wrapper>
-        )
+        </Header>
+    )
 }
-
-export default Question;

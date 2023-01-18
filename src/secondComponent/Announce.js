@@ -128,38 +128,6 @@ const Modal = styled(motion.div)`
     }
 
 `;
-function AnnounceBox({rewardCheck,marketingCheck,onRewardClicked,onMarketingClicked,inputRef,marketingClick,onClikced}){
-    
-    return(
-        <AnnounceBoxWrapper>
-            <ButtonBox>
-                <div>
-                    <h2>리워드/포인트 알림</h2>
-                    <input ref={inputRef} type="checkbox" onChange={onRewardClicked} checked={rewardCheck}/>
-                </div>
-                <ul>
-                    <li>
-                        - 오늘뭐샀니 리워드 적립현황을 알려드립니다.
-                    </li>
-                    <li> - 알림이 꺼져있을 경우 리워드 신청이 불가합니다.</li>
-                </ul>
-            </ButtonBox>
-            <ButtonBox>
-                <div>
-                    <h2>마케팅 정보 수신 동의 및 설정</h2>
-                    <input onChange={onMarketingClicked} onClick={onClikced} type="checkbox"/>
-                </div>
-                <ul>
-                    <li>
-                        - 오늘뭐샀니에서 제공하는 광고/이벤트/공지사항 등 다양한 혜택을 알려드립니다.
-                    </li>
-                </ul>
-            </ButtonBox>
-            
-        </AnnounceBoxWrapper>
-        
-    )
-}
 
 function Announce(){
     const [rewardCheck,setRewardCheck] = useState(true);
@@ -183,20 +151,45 @@ function Announce(){
                 <h2>알림설정</h2>
             <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
             </Header>
-            <AnnounceBox rewardCheck={rewardCheck} marketingCheck={marketingCheck} onRewardClicked={onRewardClicked} onMarketingClicked={onMarketingClicked} inputRef={inputRef} marketingClick={marketingClick} onClikced={onClikced}/>
-            <AnimatePresence>
-                {marketingClick ?(<>
-                    <Overlay/>
-                    <Modal style={{ top: scrollY.get() + 200 }}>
-                        <h3>2023.01.17</h3>
-                        <h3>오늘뭐샀니에서 보내는</h3>
-                        <h3>광고/이벤트/공지사항 수신여부가</h3>
-                        <h3>"동의"처리 되었습니다.</h3>
-                        <p>광고성정보 수신동의 설정 : 내 정보 > 알림설정</p>
-                        <button>확인</button>
-                    </Modal>
-                </>) : null}
-            </AnimatePresence>
+            <AnnounceBoxWrapper>
+                <ButtonBox>
+                    <div>
+                        <h2>리워드/포인트 알림</h2>
+                        <input ref={inputRef} type="checkbox" onChange={onRewardClicked} checked={rewardCheck}/>
+                    </div>
+                    <ul>
+                        <li>
+                            - 오늘뭐샀니 리워드 적립현황을 알려드립니다.
+                        </li>
+                        <li> - 알림이 꺼져있을 경우 리워드 신청이 불가합니다.</li>
+                    </ul>
+                </ButtonBox>
+                <ButtonBox>
+                    <div>
+                        <h2>마케팅 정보 수신 동의 및 설정</h2>
+                        <input onChange={onMarketingClicked} onClick={onClikced} type="checkbox"/>
+                    </div>
+                    <ul>
+                        <li>
+                            - 오늘뭐샀니에서 제공하는 광고/이벤트/공지사항 등 다양한 혜택을 알려드립니다.
+                        </li>
+                    </ul>
+                </ButtonBox>
+            
+            </AnnounceBoxWrapper>
+                <AnimatePresence>
+                    {marketingClick ?(<>
+                        <Overlay/>
+                        <Modal style={{ top: scrollY.get() + 200 }}>
+                            <h3>2023.01.17</h3>
+                            <h3>오늘뭐샀니에서 보내는</h3>
+                            <h3>광고/이벤트/공지사항 수신여부가</h3>
+                            <h3>"동의"처리 되었습니다.</h3>
+                            <p>광고성정보 수신동의 설정 : 내 정보 > 알림설정</p>
+                            <button>확인</button>
+                        </Modal>
+                    </>) : null}
+                </AnimatePresence>
             
         </Wrapper>
     )

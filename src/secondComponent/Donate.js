@@ -110,20 +110,17 @@ div{
 }
 `
 
-function DonateFooter(){
-return(
-    <DonateFooterWrapper>
-        <img className="donate" src={`${process.env.PUBLIC_URL}/assets/images/donation.png`}/>
-        <h2>아직 기부 내역이 없습니다.</h2>
-        <h2>따뜻한 마음 나누러 가볼까요?</h2>
-        <div>
-            <h1>기부하러가기 <span><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></span></h1>
-        </div>
-    </DonateFooterWrapper>
-)
-}
-function DonateHeader({Point,PointYear1,PointYear2,PointYear3 }){
-    return(
+function Donate(){
+    const [Point, setPoint] = useState(0);
+    const [PointYear1, setPointYear1] = useState(0);
+    const [PointYear2, setPointYear2] = useState(0);
+    const [PointYear3, setPointYear3] = useState(0);
+    return (
+    <Wrapper>
+        <Header>
+            <h2>기부내역</h2>
+            <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
+        </Header>
         <DonateWrapper>
             <AllDonate>
                 <div>
@@ -150,23 +147,14 @@ function DonateHeader({Point,PointYear1,PointYear2,PointYear3 }){
             </DonateYear>
             <img style={{width:"100%"}}src={`${process.env.PUBLIC_URL}/assets/images/bnr.png`}/>
         </DonateWrapper>
-
-    )
-}
-
-function Donate(){
-    const [Point, setPoint] = useState(0);
-    const [PointYear1, setPointYear1] = useState(0);
-    const [PointYear2, setPointYear2] = useState(0);
-    const [PointYear3, setPointYear3] = useState(0);
-    return (
-    <Wrapper>
-        <Header>
-            <h2>기부내역</h2>
-            <Link to="/" className="back"><img src={`${process.env.PUBLIC_URL}/assets/images/back_home.png`}/></Link>
-        </Header>
-        <DonateHeader Point={Point} PointYear1={PointYear1} PointYear2={PointYear2} PointYear3={PointYear3}/>
-        <DonateFooter/>
+        <DonateFooterWrapper>
+            <img className="donate" src={`${process.env.PUBLIC_URL}/assets/images/donation.png`}/>
+            <h2>아직 기부 내역이 없습니다.</h2>
+            <h2>따뜻한 마음 나누러 가볼까요?</h2>
+            <div>
+                <h1>기부하러가기 <span><img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}/></span></h1>
+            </div>
+    </DonateFooterWrapper>
     </Wrapper>
         )
 }
