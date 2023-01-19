@@ -1,4 +1,4 @@
-import { createGlobalStyle,ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import MyInformation from "./main/MyInformation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Theme } from "./theme";
@@ -82,49 +82,48 @@ a{
 function App() {
   return (
     <ThemeProvider theme={Theme}>
-      <GlobalStyle/>
-      
-      <Router>
-      <Switch>
-        <Route path="/account">
-          <Account/>
-        </Route>
-        <Route path="/announce">
-          <Announce/>
-        </Route>
-        <Route path="/donate">
-          <Donate/>
-        </Route>
-        <Route path="/event">
-          <Event/>
-        </Route>
-        <Route path="/invite">
-          <Invite/>
-        </Route>
-        <Route path="/notice">
-          <Notice/>
-        </Route>
-        <Route path="/question">
-          <Question/>
-        </Route>
-        <Route path="/term">
-          <Term/>
-        </Route>
-        <Route path="/Version">
-          <Version/>
-        </Route>
-        <Route path="/detailPoint">
-          <DetailPoint/>
-        </Route>
-        <Route path="/usePoint">
-          <UsePoint/>
-        </Route>
-        <Route path="/">
-          <MyInformation/>
-        </Route>
-      </Switch>
-      </Router>
+      <GlobalStyle />
 
+      <Router>
+        <Switch>
+          <Route path="/account">
+            <Account />
+          </Route>
+          <Route path="/announce">
+            <Announce />
+          </Route>
+          <Route path="/donate">
+            <Donate />
+          </Route>
+          <Route path="/event">
+            <Event />
+          </Route>
+          <Route path="/invite">
+            <Invite />
+          </Route>
+          <Route path="/notice">
+            <Notice />
+          </Route>
+          <Route path="/question">
+            <Question />
+          </Route>
+          <Route path="/term">
+            <Term />
+          </Route>
+          <Route path="/Version">
+            <Version />
+          </Route>
+          <Route path="/detailPoint">
+            <DetailPoint />
+          </Route>
+          <Route path="/usePoint">
+            <UsePoint />
+          </Route>
+          <Route path="/">
+            <MyInformation />
+          </Route>
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }
