@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/toyproject/static/js/main.17c33d90.js",
+    "main.js": "/toyproject/static/js/main.b708e0fc.js",
     "index.html": "/toyproject/index.html",
-    "main.17c33d90.js.map": "/toyproject/static/js/main.17c33d90.js.map"
+    "main.b708e0fc.js.map": "/toyproject/static/js/main.b708e0fc.js.map"
   },
   "entrypoints": [
-    "static/js/main.17c33d90.js"
+    "static/js/main.b708e0fc.js"
   ]
 }
