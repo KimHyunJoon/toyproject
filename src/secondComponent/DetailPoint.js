@@ -59,6 +59,7 @@ const TabWrapper = styled.div`
       display: flex;
       width: 100%;
       justify-content: center;
+      margin-bottom: 15px;
 
       li {
         width: 33%;
@@ -122,6 +123,37 @@ const AccumulateContentWrapper = styled.div`
   }
 `;
 
+const TotalPoint = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  height: 40px;
+  align-items: center;
+`;
+
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  width: 95%;
+  height: 80px;
+  border-top: 1px solid #f0f0f0;
+  .leftContent {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      width: 50px;
+    }
+  }
+  .rightContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 function AccumulateContentNone() {
   return (
     <AccumulateContentWrapper>
@@ -138,7 +170,24 @@ function AccumulateContentNone() {
     </AccumulateContentWrapper>
   );
 }
-
+function AccumulateContent() {
+  return (
+    <Content>
+      <div class="leftContent">
+        <img src={`${process.env.PUBLIC_URL}/assets/images/copy_3.png`} />
+        <div>
+          <p>설문조사 : 소비 형태 조사</p>
+          <p>포인트 적립 완료</p>
+          <p>2022-12-20</p>
+        </div>
+      </div>
+      <div class="rightContent">
+        <h2>30p</h2>
+        <p>완료</p>
+      </div>
+    </Content>
+  );
+}
 function Accumulate() {
   const data = [
     {
@@ -149,7 +198,13 @@ function Accumulate() {
     {
       id: 1,
       title: "완료",
-      description: <h1>헬로우 완료</h1>,
+      description: (
+        <>
+          <AccumulateContent />
+          <AccumulateContent />
+          <AccumulateContent />
+        </>
+      ),
     },
     {
       id: 2,
@@ -214,13 +269,29 @@ function Tab() {
       id: 1,
       mainid: "main_1",
       title: "사용",
-      description: <h2>안녕하세요 사용</h2>,
+      description: (
+        <>
+          <TotalPoint>
+            <p>총 사용 포인트</p>
+            <h2>0P</h2>
+          </TotalPoint>
+          <AccumulateContentNone />,
+        </>
+      ),
     },
     {
       id: 2,
       mainid: "main_2",
       title: "전체",
-      description: <h2>안녕하세요 전체</h2>,
+      description: (
+        <>
+          <TotalPoint>
+            <p>총 적립 포인트</p>
+            <h2>0P</h2>
+          </TotalPoint>
+          <AccumulateContentNone />,
+        </>
+      ),
     },
   ];
   const [index, setIndex] = useState(0);

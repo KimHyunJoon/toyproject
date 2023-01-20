@@ -165,7 +165,7 @@ function Announce(){
                             <h3>광고/이벤트/공지사항 수신여부가</h3>
                             <h3>"동의"처리 되었습니다.</h3>
                             <p>광고성정보 수신동의 설정 : 내 정보  알림설정</p>
-                            <button>확인</button>
+                            <button >확인</button>
                         </Modal>
                     </>) : null}
                 </AnimatePresence>
