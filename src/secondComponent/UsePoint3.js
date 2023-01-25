@@ -159,22 +159,19 @@ function UsePoint() {
 
   const [current, setCurrent] = useState(2);
 
-  const Item = ({ item, index,}) => {
-    //const [isOpen, setIsOpen] = useState(false);
-    const toggleOpen = () => {
-      //console.log("toggle...")
-      //setIsOpen(!isOpen);
-      if (current == index) {
-        setCurrent(2);
+  const Item = ({ item, index }) => {
+    const toggleOpen = (index) => {
+      if(current == index) {
+        setCurrent(2);        
       } else {
         setCurrent(index);
       }
-    };
+    }
 
     return (
       <>
         <ItemWrap
-          onClick={toggleOpen}
+          onClick={console.log("clicked")}
           layout
           transition={{ duration: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
           key={index}
@@ -189,7 +186,7 @@ function UsePoint() {
           <Img>
             <motion.img
               layout
-              animate={{ rotate: current === index ? 270 : 90 }}
+              animate={{ rotate: current===index ? 270 : 90 }}
               src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
               alt={item.title}
             />
@@ -222,8 +219,8 @@ function UsePoint() {
   };
 
   function Acoodian() {
-    const [isOpened, setIsOpened] = useState();
-    const activeOpen = () => setIsOpened("active");
+    //const [isOpened, setIsOpened] = useState();
+    //const activeOpen = () => setIsOpened("active");
     const InnerContent = [
       {
         title: "cashout",
@@ -256,7 +253,7 @@ function UsePoint() {
                 key={index}
                 item={item}
                 index={index}
-                isOpened={isOpened}
+                //isOpened={isOpened}
                 //onClick={activeOpen}
               />
             ))}

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, AnimateSharedLayout } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -157,27 +157,21 @@ function UsePoint() {
     }
   `;
 
-  const [current, setCurrent] = useState(2);
-
-  const Item = ({ item, index,}) => {
-    //const [isOpen, setIsOpen] = useState(false);
-    const toggleOpen = () => {
-      //console.log("toggle...")
-      //setIsOpen(!isOpen);
-      if (current == index) {
-        setCurrent(2);
-      } else {
-        setCurrent(index);
-      }
-    };
-
+  const Item = ({ item, index, isOpened }) => {
+    
+    const [isActive, setIsActive] = useState("Active");
+    const toggleOpen = () => setIsOpen(!isOpen);
+    const curRef = useRef();
+    console.log(curRef);
     return (
       <>
         <ItemWrap
+          ref={curRef}
           onClick={toggleOpen}
           layout
           transition={{ duration: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
           key={index}
+          {isOpen ? }
         >
           <div>
             <img
@@ -189,14 +183,14 @@ function UsePoint() {
           <Img>
             <motion.img
               layout
-              animate={{ rotate: current === index ? 270 : 90 }}
+              animate={{ rotate: isOpen ? 270 : 90 }}
               src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
               alt={item.title}
             />
           </Img>
         </ItemWrap>
         <AnimatePresence>
-          {current === index && (
+          {isOpen && (
             <SubWrap
               layout
               initial={{ y: -10, opacity: 0 }}
@@ -257,7 +251,7 @@ function UsePoint() {
                 item={item}
                 index={index}
                 isOpened={isOpened}
-                //onClick={activeOpen}
+                onClick={activeOpen}
               />
             ))}
           </motion.ul>
