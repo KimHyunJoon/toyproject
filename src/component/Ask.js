@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
     background-color: white;
     height: 150px;
@@ -20,6 +21,7 @@ h2{
     font-weight: bolder;
 }
 `
+
 
 function Ask(){
     return(<Wrapper>

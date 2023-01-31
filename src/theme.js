@@ -1,6 +1,10 @@
-import {} from "styled-components"
+import {} from "styled-components";
 
-export const Theme ={
-    mainColor:"#fbc705",
-    headerColor:"#fcc00b"
-}
+export const Theme = {
+  mainColor: "#fbc705",
+  headerColor: "#fcc00b",
+
+  fontBold: "SourceHanSansKR-Bold",
+  fontReg: "SourceHanSansKR-Regular",
+  fontMed: "SourceHanSansKR-Medium",
+};

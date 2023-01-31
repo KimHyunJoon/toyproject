@@ -20,19 +20,18 @@ const Box = styled.div`
     height: 50px;
     cursor: pointer;
 
-    div {
+    .title {
       display: flex;
       justify-content: center;
       align-items: center;
       img {
-        width: 13px;
-        height: 13px;
+        width: 15px;
+        margin-right: 5px;
       }
-      :first-child {
-        display: flex;
-        img {
-          margin-right: 10px;
-        }
+    }
+    div {
+      img {
+        width: 10px;
       }
     }
   }
@@ -57,174 +56,44 @@ const Question = styled.div`
   }
 `;
 
+function BoxContent({ link, img, title }) {
+  return (
+    <Box>
+      <Link to={`/${link}`}>
+        <div className="title">
+          <img src={`${process.env.PUBLIC_URL}/assets/images/${img}.png`} />
+          <p>{title}</p>
+        </div>
+        <div>
+          <img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`} />
+        </div>
+      </Link>
+    </Box>
+  );
+}
+
 function MyInfo() {
   return (
     <Wrapper>
       <BoxWrapper>
-        <Box>
-          <Link to="/Account">
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/assets/images/account.png`}
-              />
-              <p>계정관리</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="/Invite">
-            <div>
-              <img src={`${process.env.PUBLIC_URL}/assets/images/invite.png`} />
-              <p>친구초대</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="/Donate">
-            <div>
-              <img src={`${process.env.PUBLIC_URL}/assets/images/donate.png`} />
-              <p>기부내역</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="/Announce">
-            <div>
-              <img src={`${process.env.PUBLIC_URL}/assets/images/notice.png`} />
-              <p>알림설정</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
+        <BoxContent link={"Account"} img={"account"} title={"계정관리"} />
+        <BoxContent link={"Invite"} img={"invite"} title={"친구초대"} />
+        <BoxContent link={"Donate"} img={"donate"} title={"기부내역"} />
+        <BoxContent link={"Announce"} img={"notice"} title={"알림설정"} />
       </BoxWrapper>
       <BoxWrapper>
-        <Box>
-          <Link to="/Version">
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/assets/images/version.png`}
-              />
-              <p>버전정보</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="/Notice">
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/assets/images/version.png`}
-              />
-              <p>공지사항</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="/Event">
-            <div>
-              <img src={`${process.env.PUBLIC_URL}/assets/images/event.png`} />
-              <p>이벤트</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="/Term">
-            <div>
-              <img src={`${process.env.PUBLIC_URL}/assets/images/term.png`} />
-              <p>이용약관</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
+        <BoxContent link={"Version"} img={"version"} title={"버전정보"} />
+        <BoxContent link={"Notice"} img={"version"} title={"공지사항"} />
+        <BoxContent link={"Event"} img={"event"} title={"이벤트"} />
+        <BoxContent link={"Term"} img={"term"} title={"이용약관"} />
       </BoxWrapper>
       <BoxWrapper>
-        <Box>
-          <Link to="/Question">
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/assets/images/question_1.png`}
-              />
-              <p>자주 묻는 질문</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
-        <Box>
-          <Link>
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/assets/images/cashCow.png`}
-              />
-              <p>오늘뭐샀니 사용법</p>
-            </div>
-            <div>
-              <a>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
-                />
-              </a>
-            </div>
-          </Link>
-        </Box>
+        <BoxContent
+          link={"Question"}
+          img={"question_1"}
+          title={"자주 묻는 질문"}
+        />
+        <BoxContent link={"Term"} img={"cashCow"} title={"오늘뭐샀니 사용법"} />
       </BoxWrapper>
       <AskWrapper>
         <Question>

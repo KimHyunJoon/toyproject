@@ -15,7 +15,7 @@ import Term from "./secondComponent/Term";
 import Version from "./secondComponent/Version";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
   html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -68,7 +68,7 @@ table {
 }
 body{
   font-weight: 300;
-  font-family: 'Source Sans Pro',sans-serif;
+  font-family: 'SourceHanSansKR-Regular';
   line-height: 1.2;
   display: flex;
   justify-content: center;
@@ -78,7 +78,6 @@ a{
   text-decoration: none;
 }
 `;
-
 function App() {
   return (
     <ThemeProvider theme={Theme}>
@@ -86,9 +85,8 @@ function App() {
 
       <Router>
         <Switch>
-          <Route path="/account">
-            <Account />
-          </Route>
+          <Route path="/account" component={Account} />
+          <Route path="/account/Test" component={Account} />
           <Route path="/announce">
             <Announce />
           </Route>
