@@ -1,0 +1,14 @@
+@font-face {
+    font-family:SourceHanSansKR-Bold;
+    src:url('../styled/font/SourceHanSansKR-Bold.otf')
+}
+
+@font-face {
+    font-family:SourceHanSansKR-Medium;
+    src:url('../styled/font/SourceHanSansKR-Medium.otf')
+}
+
+@font-face {
+    font-family:SourceHanSansKR-Regular;
+    src:url('../styled/font/SourceHanSansKR-Regular.otf')
+}
