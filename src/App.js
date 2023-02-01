@@ -13,9 +13,10 @@ import Notice from "./secondComponent/Notice";
 import Question from "./secondComponent/Question";
 import Term from "./secondComponent/Term";
 import Version from "./secondComponent/Version";
+import HowToUse from "./secondComponent/HowToUse";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;Bold;&display=swap');
   html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -73,11 +74,32 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  color:#333333;
+  
 }
 a{
   text-decoration: none;
+  color:#333333;
+  
+}
+h1{
+  font-family: 'SourceHanSansKR-Bold';
+  font-weight: bold;
+}
+h2{
+  font-family: 'SourceHanSansKR-Medium';
+  font-weight: 500;
+}
+h3{
+  font-family:'Roboto', sans-serif;
+  font-weight:700;
+}
+h4{
+  font-family:'Roboto', sans-serif;
+  font-weight:500;
 }
 `;
+
 function App() {
   return (
     <ThemeProvider theme={Theme}>
@@ -116,6 +138,9 @@ function App() {
           </Route>
           <Route path="/usePoint">
             <UsePoint />
+          </Route>
+          <Route path="/HowToUse">
+            <HowToUse />
           </Route>
           <Route path="/">
             <MyInformation />

@@ -2,11 +2,7 @@ import { AnimatePresence, motion, AnimateSharedLayout } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-const Wrapper = styled.div`
-  width: 360px;
-  background: #f0f0f0;
-`;
+import { Wrapper } from "../styledComponent/all";
 
 const UsePointHeader = styled.div`
   background-color: white;
@@ -82,7 +78,7 @@ const ItemWrap = styled(motion.li)`
     img {
       width: 20px;
     }
-    h1 {
+    h2 {
       margin-left: 15px;
       font-size: 15px;
       z-index: 1;
@@ -159,7 +155,7 @@ function UsePoint() {
 
   const [current, setCurrent] = useState(2);
 
-  const Item = ({ item, index,}) => {
+  const Item = ({ item, index }) => {
     //const [isOpen, setIsOpen] = useState(false);
     const toggleOpen = () => {
       //console.log("toggle...")
@@ -176,19 +172,28 @@ function UsePoint() {
         <ItemWrap
           onClick={toggleOpen}
           layout
-          transition={{ duration: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
+          transition={{
+            type: "spring",
+            duration: 0.3,
+            ease: [0.43, 0.13, 0.23, 0.96],
+          }}
           key={index}
         >
           <div>
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/${item.img}.png`}
             />
-            <motion.h1>{item.title}</motion.h1>
+            <motion.h2>{item.title}</motion.h2>
           </div>
 
           <Img>
             <motion.img
               layout
+              transition={{
+                type: "spring",
+                duration: 0.1,
+                ease: [0.43, 0.13, 0.23, 0.96],
+              }}
               animate={{ rotate: current === index ? 270 : 90 }}
               src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
               alt={item.title}

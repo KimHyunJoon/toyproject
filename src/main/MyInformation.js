@@ -1,13 +1,7 @@
 import styled from "styled-components";
 import PointInfo from "../component/PointInfo";
 import MyInfo from "../component/MyInfo";
-
-
-
-const Wrapper = styled.div`
-  background: #f0f0f0;
-  width: 360px;
-`;
+import { Wrapper } from "../styledComponent/all";
 
 const Header = styled.div`
   display: flex;
@@ -15,7 +9,6 @@ const Header = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.headerColor};
   height: 50px;
-  font-weight: bolder;
   font-size: 19px;
 `;
 
@@ -36,6 +29,7 @@ const Ul = styled.ul`
     align-items: center;
     flex-direction: column;
     font-size: 10px;
+    cursor: pointer;
     img {
       width: 20px;
       margin-bottom: 5px;
@@ -43,13 +37,11 @@ const Ul = styled.ul`
   }
 `;
 
-
-
 function MyInformation() {
   return (
     <Wrapper>
       <Header>
-        <h2>내정보</h2>
+        <h1>내정보</h1>
       </Header>
       <PointInfo />
       <MyInfo />

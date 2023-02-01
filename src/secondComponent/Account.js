@@ -2,11 +2,8 @@ import { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 import HeaderBox from "./Header";
+import { Wrapper } from "../styledComponent/all";
 
-const Wrapper = styled.div`
-  background: #f0f0f0;
-  width: 360px;
-`;
 const AccountWrapper = styled.div`
   background-color: white;
   margin-bottom: 10px;
@@ -63,7 +60,8 @@ const NameBox = styled(Box)`
 `;
 const PersonalInfo = styled.div`
   display: flex;
-  padding-bottom: 50px;
+  padding: 50px 15px;
+  word-break: keep-all;
   img {
     margin-right: 5px;
     margin-top: 2px;
@@ -81,6 +79,7 @@ const Secession = styled.div`
   align-items: center;
   border: 1px solid #f0f0f0;
   height: 50px;
+  cursor: pointer;
 `;
 
 function EmailAccount() {
@@ -90,7 +89,7 @@ function EmailAccount() {
     <AccountWrapper>
       <Email>
         <h2>이메일 계정</h2>
-        <h2>{Id}@cashcow.co.kr</h2>
+        <h4>{Id}@cashcow.co.kr</h4>
       </Email>
       <Box>
         <div className="info">
@@ -114,26 +113,26 @@ function MyInform() {
       <NameBox>
         <div className="info">
           <h2>이름</h2>
-          <h3>{name}</h3>
+          <p>{name}</p>
           <a href="/">*개명한 경우는 어떻게 하나요?</a>
         </div>
         <div className="change">
-          <h2>변경</h2>
+          <p>변경</p>
         </div>
       </NameBox>
       <Box>
         <div className="info">
           <h2>생년월일</h2>
-          <h3>{birthday}</h3>
+          <p>{birthday}</p>
         </div>
       </Box>
       <Box>
         <div className="info">
           <h2>휴대전화</h2>
-          <h3>{phone}</h3>
+          <p>{phone}</p>
         </div>
         <div className="change">
-          <h2>변경</h2>
+          <p>변경</p>
         </div>
       </Box>
     </AccountWrapper>
@@ -154,8 +153,10 @@ function PersonalUse() {
       <PersonalInfo>
         <img src={`${process.env.PUBLIC_URL}/assets/images/version.png`} />
         <p>
-          휴대전화 번호 변경은 현재 등록된 번호의 명의자와 변경할 휴대폰 번호의
-          명의자가 동일안 경우에만 가능합니다.
+          휴대전화와 번호 변경은 현재 등록된 번호의 명의자와 변경할 휴대폰
+          번호의 명의자가 동일한 경우애만 가능합니다.
+          <br />
+          (휴대폰 기기와 무관 휴대폰 번화와 연동)
         </p>
       </PersonalInfo>
       <Secession>

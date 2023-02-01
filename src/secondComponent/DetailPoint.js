@@ -2,11 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import HeaderBox from "./Header";
+import { Wrapper } from "../styledComponent/all";
 
-const Wrapper = styled.div`
-  background: #f0f0f0;
-  width: 360px;
-`;
 
 const Point = styled.div`
   background-color: ${(props) => props.theme.mainColor};

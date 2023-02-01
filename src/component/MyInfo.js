@@ -30,8 +30,9 @@ const Box = styled.div`
       }
     }
     div {
+      padding: 10px;
       img {
-        width: 10px;
+        width: 8px;
       }
     }
   }
@@ -51,6 +52,7 @@ const Question = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   h2 {
     font-weight: bolder;
   }
@@ -93,7 +95,11 @@ function MyInfo() {
           img={"question_1"}
           title={"자주 묻는 질문"}
         />
-        <BoxContent link={"Term"} img={"cashCow"} title={"오늘뭐샀니 사용법"} />
+        <BoxContent
+          link={"HowToUse"}
+          img={"cashCow"}
+          title={"오늘뭐샀니 사용법"}
+        />
       </BoxWrapper>
       <AskWrapper>
         <Question>

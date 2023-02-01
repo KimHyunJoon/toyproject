@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 import HeaderBox from "./Header";
-
-const Wrapper = styled.div`
-  background: #f0f0f0;
-  width: 360px;
-`;
+import { Wrapper } from "../styledComponent/all";
 
 const AnnounceBoxWrapper = styled.div`
   background-color: white;
@@ -84,7 +80,7 @@ const Modal = styled(motion.div)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  h3 {
+  h2 {
     font-size: 13px;
     line-height: 18px;
     :first-child {
@@ -169,19 +165,19 @@ function Announce() {
 
             {marketingCheck ? (
               <Modal style={{ top: scrollY.get() + 200 }}>
-                <h3>2023.01.17</h3>
-                <h3>오늘뭐샀니에서 보내는</h3>
-                <h3>광고/이벤트/공지사항 수신여부가</h3>
-                <h3>"동의"처리 되었습니다.</h3>
+                <h2>2023.01.17</h2>
+                <h2>오늘뭐샀니에서 보내는</h2>
+                <h2>광고/이벤트/공지사항 수신여부가</h2>
+                <h2>"동의"처리 되었습니다.</h2>
                 <p>광고성정보 수신동의 설정 : 내 정보 알림설정</p>
                 <button onClick={overLayOffClick}>확인</button>
               </Modal>
             ) : (
               <Modal style={{ top: scrollY.get() + 200 }}>
-                <h3>2023.01.17</h3>
-                <h3>오늘뭐샀니에서 보내는</h3>
-                <h3>광고/이벤트/공지사항 수신여부가</h3>
-                <h3>"수신거부"처리 되었습니다.</h3>
+                <h2>2023.01.17</h2>
+                <h2>오늘뭐샀니에서 보내는</h2>
+                <h2>광고/이벤트/공지사항 수신여부가</h2>
+                <h2>"수신거부"처리 되었습니다.</h2>
                 <p>광고성정보 수신동의 설정 : 내 정보 알림설정</p>
                 <button onClick={overLayOffClick}>확인</button>
               </Modal>

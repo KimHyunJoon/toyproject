@@ -4,11 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useState } from "react";
+import { Wrapper } from "../styledComponent/all";
 
-const Wrapper = styled.div`
-  background: #f0f0f0;
-  width: 360px;
-`;
 const QuestionWrapper = styled.div`
   background-color: white;
   margin-bottom: 15px;
@@ -50,6 +47,7 @@ const Box = styled(motion.div)`
     border-bottom: 1px solid #f0f0f0;
     height: 40px;
     font-size: 14px;
+    cursor: pointer;
 
     img {
       width: 10px;
@@ -77,7 +75,9 @@ const Img = styled(motion.div)`
 `;
 const BoxShadow = styled(motion.div)`
   background-color: #f0f0f0;
+
   padding: 10px;
+  word-break: break-word;
 `;
 
 function QuestionBox({ title, content, key }) {
@@ -110,16 +110,17 @@ function QuestionBox({ title, content, key }) {
                   animate={{
                     bounce: 0,
                     type: "spring",
-                    rotate: opened ? 270 : 90,
+                    rotate: current === index ? 270 : 90,
                   }}
                   src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`}
                 />
               </Img>
             </div>
-            <AnimatePresence>
+            <AnimatePresence exitBeforeEnter>
               {current === index && (
                 <BoxShadow
                   layout
+                  key={index}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -199,7 +200,9 @@ function Question() {
       title: "안녕하세요3",
       content: () => (
         <div>
-          <p>테스트 입니다.3</p>
+          <p>
+            adfsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+          </p>
         </div>
       ),
     },

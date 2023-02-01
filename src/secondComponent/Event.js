@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import HeaderBox from "./Header";
+import { Wrapper } from "../styledComponent/all";
 
-const Wrapper = styled.div`
-background: #f0f0f0;
-width: 360px;
 
-`;
 
 
 const EventWrapper = styled.div`
