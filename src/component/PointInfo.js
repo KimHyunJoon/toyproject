@@ -134,20 +134,20 @@ const UsePoint = styled.div`
 
 function CheckingNumberFnc(scaleValue) {
   let checking_number = [];
-  if (scaleValue < 50) {
+  if (scaleValue < 25) {
     checking_number.push(0);
-  } else if (scaleValue < 75) {
+  } else if (scaleValue < 50) {
     checking_number.push(0, 1);
-  } else if (scaleValue < 100) {
+  } else if (scaleValue < 75) {
     checking_number.push(0, 1, 2);
-  } else if (scaleValue >= 100) {
+  } else if (scaleValue <= 100) {
     checking_number.push(0, 1, 2, 3);
   }
 
   return checking_number;
 }
 function PointInfo() {
-  const [allPoint, setAllPoint] = useState(40000);
+  const [allPoint, setAllPoint] = useState(34000);
   const [savePoint, setSavePoint] = useState(0);
   const [deletePoint, setDeletePoint] = useState(0);
   const pointValue = useMotionValue(allPoint);

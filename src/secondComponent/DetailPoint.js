@@ -4,32 +4,41 @@ import { motion, AnimatePresence } from "framer-motion";
 import HeaderBox from "./Header";
 import { Wrapper } from "../styledComponent/all";
 
-
 const Point = styled.div`
   background-color: ${(props) => props.theme.mainColor};
   padding: 30px 15px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
   .leftPoint {
     display: flex;
     flex-direction: column;
     justify-content: center;
     h2 {
+      img {
+        width: 6px;
+      }
+    }
+    p {
       padding: 5px 0px;
       font-size: 35px;
-      font-weight: bolder;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
     }
   }
+
   .rightPoint {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: ${(props) => props.theme.fontColor2};
     div {
       display: flex;
       justify-content: space-between;
+
       h2 {
-        font-weight: bolder;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
       }
     }
     hr {
@@ -342,8 +351,13 @@ function DetailPoint() {
       <HeaderBox title={"포인트 내역"} />
       <Point>
         <div className="leftPoint">
-          <h4>포인트 내역 </h4>
-          <h2>{allPoint}P</h2>
+          <h2>
+            포인트 내역{" "}
+            <span>
+              <img src={`${process.env.PUBLIC_URL}/assets/images/arrow.png`} />
+            </span>
+          </h2>
+          <p>{[allPoint].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}P</p>
         </div>
         <div className="rightPoint">
           <div>

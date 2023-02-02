@@ -81,7 +81,7 @@ const Modal = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   h2 {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
     :first-child {
       margin-top: 20px;
@@ -89,7 +89,7 @@ const Modal = styled(motion.div)`
   }
   p {
     margin-top: 15px;
-    font-size: 10px;
+    font-size: 12px;
   }
   button {
     margin-top: auto;

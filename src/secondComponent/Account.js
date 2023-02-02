@@ -27,7 +27,7 @@ const Box = styled.div`
   align-items: center;
   height: 50px;
   border-top: 1px solid #f0f0f0;
-  font-size: 15px;
+  font-size: 14px;
   .info {
     width: 70%;
     display: flex;
@@ -79,6 +79,7 @@ const Secession = styled.div`
   align-items: center;
   border: 1px solid #f0f0f0;
   height: 50px;
+  font-size: 14px;
   cursor: pointer;
 `;
 

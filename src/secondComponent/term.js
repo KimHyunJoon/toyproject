@@ -2,7 +2,6 @@ import styled from "styled-components";
 import HeaderBox from "./Header";
 import { Wrapper } from "../styledComponent/all";
 
-
 const TermWrapper = styled.div`
   padding: 15px;
   background-color: white;
@@ -10,8 +9,9 @@ const TermWrapper = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid #f0f0f0;
   cursor: pointer;
+  font-size: 14px;
   img {
-    width: 10px;
+    width: 8px;
   }
 `;
 function Box({ title }) {

@@ -29,8 +29,8 @@ function Notice() {
       <HeaderBox title={"공지사항"} />
       <NoticeWrapper>
         <NoticeBox>
-          <h2>설 연휴 포인트 지급 안내</h2>
-          <h2>{todayTime()}</h2>
+          <h3>설 연휴 포인트 지급 안내</h3>
+          <h3>{todayTime()}</h3>
         </NoticeBox>
       </NoticeWrapper>
     </Wrapper>

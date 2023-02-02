@@ -49,6 +49,7 @@ const Recommender = styled.div`
   border: 1px solid #f0f0f0;
   border-radius: 30px;
   margin-bottom: 100px;
+  font-size: 14px;
   cursor: pointer;
   p {
     display: flex;
