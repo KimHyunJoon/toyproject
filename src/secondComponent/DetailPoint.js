@@ -7,7 +7,6 @@ import { Wrapper } from "../styledComponent/all";
 const Point = styled.div`
   background-color: ${(props) => props.theme.mainColor};
   padding: 30px 15px;
-  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   .leftPoint {
