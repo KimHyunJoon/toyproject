@@ -84,8 +84,8 @@ const Secession = styled.div`
 `;
 
 function EmailAccount() {
-  const [Id, setId] = useState("cashcow");
-  const [password, setPassword] = useState("******");
+  const [Id, setId] = useState("cashcow");// DB에서 받아올때 바꿀곳
+  const [password, setPassword] = useState("******");//DB에서 받아올때 바꾸는곳 
   return (
     <AccountWrapper>
       <Email>

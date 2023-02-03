@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { useHistory, useRouteMatch } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useMotionValue, useTransform } from "framer-motion";
 
 const Wrapper = styled.div`

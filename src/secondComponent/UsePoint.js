@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, AnimateSharedLayout } from "framer-motion";
+import { AnimatePresence, motion} from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -26,28 +26,6 @@ const UsePointHeader = styled.div`
   }
 `;
 
-const AcoodianWrapper = styled(motion.div)`
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-  div {
-    display: flex;
-    img {
-      width: 15px;
-      height: 15px;
-    }
-    h2 {
-      margin-left: 10px;
-    }
-  }
-  img {
-    width: 10px;
-  }
-`;
 
 const AcoodianContent = styled(motion.div)`
   width: 100%;
@@ -228,7 +206,6 @@ function UsePoint() {
 
   function Acoodian() {
     const [isOpened, setIsOpened] = useState();
-    const activeOpen = () => setIsOpened("active");
     const InnerContent = [
       {
         title: "cashout",

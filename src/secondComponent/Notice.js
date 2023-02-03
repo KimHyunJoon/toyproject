@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import HeaderBox from "./Header";
 import { Wrapper } from "../styledComponent/all";

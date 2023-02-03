@@ -3,7 +3,7 @@ import HeaderBox from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { Wrapper } from "../styledComponent/all";
 
 const QuestionWrapper = styled.div`
